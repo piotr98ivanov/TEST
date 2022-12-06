@@ -106,7 +106,7 @@ body {
 }
 
 .header__container {
-
+  align-items: center;
 }
 
 .header__logo--wrapper {
@@ -130,13 +130,10 @@ body {
 }
 
 .header__contact {
-
-}
-
-.header__contact {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  gap: 12px
 }
 
 .header__contact__item {
