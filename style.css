@@ -1,23 +1,28 @@
 *, *:before, *:after {
-box-sizing: border-box;
+  box-sizing: border-box;
 }
+
 html, body {
-	height: 100%;
+  height: 100%;
 }
+
 body {
-	line-height: 1.5;
-	-webkit-font-smoothing: antialiased;
- }
- img, picture, video, canvas, svg {
-	display: block;
-	max-width: 100%;
- }
- input, button, textarea, select {
-	font: inherit;
- }
- p, h1, h2, h3, h4, h5, h6 {
-	overflow-wrap: break-word;
- }
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
 
 blockquote,
 dl,
@@ -34,85 +39,93 @@ ol,
 p,
 pre,
 ul {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
+
 html,
 body {
-	font-family: 'Rubik', sans-serif;
-	padding: 0;
-	margin: 0;
+  font-family: 'Rubik', sans-serif;
+  padding: 0;
+  margin: 0;
 }
 
 .container {
-	display: flex;
-	justify-content: space-between;
-	/* width: 100% - потому что я хоче чтобы контент всегда занимал всю ширену браузера */
-	width: 100%;
+  display: flex;
+  justify-content: space-between;
+  /* width: 100% - потому что я хоче чтобы контент всегда занимал всю ширену браузера */
+  width: 100%;
 
-	/* Но при этом максимальная ширена будет 1200px.
-	   Это позволит зафиксировать шарану на компах,но при это на планшете и мобилке контент займет 100%, это нам и нужно
-	 */
-	max-width: 1160px;
+  /* Но при этом максимальная ширена будет 1200px.
+     Это позволит зафиксировать шарану на компах,но при это на планшете и мобилке контент займет 100%, это нам и нужно
+   */
+  max-width: 1160px;
 
-	/* Эта штука делает следующее: */
-	/* по оси Y(0) элемент с этим классом будет иметь 0px отступа */
-	/* а по оси X(auto) конент выравнится по центру, что нам и нужно,так как контент у сайта по центру */
-	margin: 0 auto;
-}
-.picture{
-	display: flex;
-    max-height: 112px;
-    align-items: center;
-    justify-content: flex-start;
-}
-nav{
-	position: relative;
-	top: 30px;
-	word-spacing: 5px;
-	
-}
-.header__contact{
-	display: flex;
-	align-items: center;
-	justify-content: flex-start;
-}
-.clock{
-	position: relative;
-	right: 140px;
-	top:10px;
-	color: #231F20;
+  /* Эта штука делает следующее: */
+  /* по оси Y(0) элемент с этим классом будет иметь 0px отступа */
+  /* а по оси X(auto) конент выравнится по центру, что нам и нужно,так как контент у сайта по центру */
+  margin: 0 auto;
 }
 
-picture{
-	position:relative;
-	top:28px
+.picture {
+  display: flex;
+  max-height: 112px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+nav {
+  position: relative;
+  top: 30px;
+  word-spacing: 5px;
 
 }
-a{
-	text-decoration: none;
-	color: #231F20;
+
+.header__contact {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
+
+.clock {
+  position: relative;
+  right: 140px;
+  top: 10px;
+  color: #231F20;
+}
+
+picture {
+  position: relative;
+  top: 28px
+
+}
+
+a {
+  text-decoration: none;
+  color: #231F20;
+}
+
 .nav a {
-	float: left;
-	display: block;
-	color: #f2f2f2;
-	text-align: center;
-	padding: 14px 16px;
-	text-decoration: none;
-	font-size: 17px;
-	border-bottom: 3px solid transparent;
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  border-bottom: 3px solid transparent;
 }
 
 .nav a:hover {
-	border-bottom: 2px solid #FFDA00;
+  border-bottom: 2px solid #FFDA00;
 }
 
 nav a.active {
-	border-bottom: 2px solid #FFDA00;
+  border-bottom: 2px solid #FFDA00;
 }
+
 @media screen and (min-width: 480px) {
-	body {
-		 background-color: lightgreen;
-	}
+  body {
+    background-color: lightgreen;
+  }
 }
