@@ -67,59 +67,8 @@ body {
   margin: 0 auto;
 }
 
-.picture {
-  display: flex;
-  max-height: 112px;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-nav {
-  position: relative;
-  top: 30px;
-  word-spacing: 5px;
-
-}
-
 .header__contact {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-}
-
-.clock {
-  position: relative;
-  right: 140px;
-  top: 10px;
-  color: #231F20;
-}
-
-picture {
-  position: relative;
-  top: 28px
-
-}
-
-a {
-  text-decoration: none;
-  color: #231F20;
-}
-
-.nav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-  border-bottom: 3px solid transparent;
-}
-
-.nav a:hover {
-  border-bottom: 2px solid #FFDA00;
-}
-
-nav a.active {
-  border-bottom: 2px solid #FFDA00;
 }
