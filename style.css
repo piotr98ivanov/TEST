@@ -6,6 +6,7 @@
   --black2: #25252e;
   --white: #fff;
   --silver: #f1f1f5;
+  --gray: #777595;
   --yellow: #ffda00;
   --orange: #ff6c0e;
 
@@ -158,22 +159,57 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 12px
+  gap: 20px;
 }
 
 .header__contact__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
+  color: var(--black);
+  font-weight: var(--weight-500);
+  text-decoration: none;
 }
 
-.header__contact__item a {
+.header__contact__item:visited {
+  color: var(--black);
+}
 
+.header__contact__item:hover {
+  color: var(--orange);
 }
 
 .header__contact__item span {
+  font-size: var(--size-xs);
+}
 
+.header__contact__item img {
+  width: 56px;
 }
 
 /* Styles specific for the Phone block */
-.header__contact__item.header__contact--phone {
+.header__contact--phone {
+  /* gap чтобы раздвинуть немного номер от текста */
+  gap: 8px;
 
+  /* чтобы выровнять по левой стороне в отличае от соц.сетей */
+  align-items: flex-start;
+}
+
+.header__contact--phone a {
+  color: var(--black);
+  font-size: var(--size-xl);
+  font-weight: var(--weight-600);
+
+  text-decoration: none;
+}
+
+.header__contact--phone a:visited {
+  color: var(--black);
+}
+
+.header__contact--phone span {
+  color: var(--gray);
+  font-size: var(--size-xs);
 }
