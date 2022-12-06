@@ -21,6 +21,11 @@
   --size-lg: 18px;
   --size-xl: 20px;
 
+  --weight-300: 300;
+  --weight-400: 400;
+  --weight-500: 500;
+  --weight-600: 600;
+
   /* Тут определяем брейк поинты */
   --container: 1280px;
 }
@@ -122,11 +127,31 @@ body {
 }
 
 .header__nav {
-
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 .header__nav__item {
+  font-size: var(--size-md);
+  color: var(--black);
+  font-weight: var(--weight-500);
 
+  text-decoration: none;
+
+  padding: 12px 0;
+}
+
+.header__nav__item:visited {
+  color: var(--black);
+}
+
+.header__nav__item:hover {
+  color: var(--orange);
+}
+
+.header__nav__item.active {
+  border-bottom: 2px solid var(--yellow);
 }
 
 .header__contact {
