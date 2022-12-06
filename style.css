@@ -123,9 +123,3 @@ a {
 nav a.active {
   border-bottom: 2px solid #FFDA00;
 }
-
-@media screen and (min-width: 480px) {
-  body {
-    background-color: lightgreen;
-  }
-}

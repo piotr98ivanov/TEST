@@ -20,32 +20,32 @@
     <title>Document</title>
 </head>
 <body>
-<header>
+<header class="header">
     <div class="container">
-        <picture>
-            <source media="(max-width: 1280px)" srcset="/img/probuksir_logo_min.svg">
-            <img src="/img/probuksir_logo.svg" class="header__logo" alt="logo">
+        <picture class="header__logo--wrapper">
+            <source class="header__logo__source" media="(max-width: 1280px)" srcset="/img/probuksir_logo_min.svg">
+            <img class="header__logo" src="/img/probuksir_logo.svg" alt="logo">
         </picture>
-        <nav>
-            <a href="Home" class="active">Главная</a>
-            <a href="">Услуги</a>
-            <a href="">Цены</a>
-            <a href="">Контакты</a>
-            <a href="">Статьи</a>
-            <a href="">Юр.лицам</a>
+        <nav class="header__nav">
+            <a class="header__nav__item active" href="Home">Главная</a>
+            <a class="header__nav__item" href="">Услуги</a>
+            <a class="header__nav__item" href="">Цены</a>
+            <a class="header__nav__item" href="">Контакты</a>
+            <a class="header__nav__item" href="">Статьи</a>
+            <a class="header__nav__item" href="">Юр.лицам</a>
         </nav>
         <div class="header__contact">
-            <div class="header__contact header__contact--phone">
+            <div class="header__contact__item header__contact--phone">
                 <a href="tel:+7(919)777-90-09" class="phone"><b>+7 (919) 777-90-09</b></a>
                 <span class="clock"><br>24/7 Круглосуточно</span>
             </div>
-            <div class="header__contact header__contact--icon">
+            <div class="header__contact__item header__contact--icon">
                 <a href="https://wa.me/+7(919)777-90-09">
                     <img src="img/whatsapp.svg" alt="WhatsApp">
                     <span class="whatsapp"><b>Чат</b>WhatsApp</span>
                 </a>
             </div>
-            <div class="header__contact header__contact--icon">
+            <div class="header__contact__item header__contact--icon">
                 <a href="#callback" class="js--callback-form">
                     <img src="/img/callback.svg" alt="Заказ звонка">
                     <span>Заказ Звонка</span>
@@ -53,7 +53,6 @@
             </div>
         </div>
     </div>
-
 </header>
 </body>
 </html>
