@@ -67,8 +67,60 @@ body {
   margin: 0 auto;
 }
 
+/**
+  Header Styles
+ */
+.header {
+
+}
+
+.header__container {
+
+}
+
+.header__logo--wrapper {
+
+}
+
+.header__logo {
+
+}
+
+.header__logo__source {
+
+}
+
+.header__nav {
+
+}
+
+.header__nav__item {
+
+}
+
+.header__contact {
+
+}
+
 .header__contact {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+}
+
+.header__contact__item {
+
+}
+
+.header__contact__item a {
+
+}
+
+.header__contact__item span {
+
+}
+
+/* Styles specific for the Phone block */
+.header__contact__item.header__contact--phone {
+
 }
