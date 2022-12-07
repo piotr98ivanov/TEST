@@ -104,6 +104,14 @@ body {
   margin: 0 auto;
 }
 
+/* Уменьшаем отступы у контейнера на планшетах как в оригинале */
+@media (max-width: 1280px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
 /**
   Header Styles
  */
@@ -191,6 +199,16 @@ body {
   gap: 2px;
 }
 
+/* На планшетах контакты идут в строку, а так же увеличивается расстояние между иконкой и текстом */
+@media (max-width: 1280px) {
+  /* Восетую глянуть в доку по CSS .not() Если в кратце то это в not мы можем указать исключения */
+  /* Исключение могут быть так же и псевдо классы типа :hover, :active и тп */
+  .header__contact__item:not(.header__contact--phone) {
+    flex-direction: row;
+    gap: 6px;
+  }
+}
+
 .header__contact__item:visited {
   color: var(--black);
 }
@@ -205,6 +223,12 @@ body {
 
 .header__contact__item img {
   width: 56px;
+}
+
+@media (max-width: 1280px) {
+  .header__contact__item img {
+    width: 36px;
+  }
 }
 
 /* Styles specific for the Phone block */
@@ -231,4 +255,15 @@ body {
 .header__contact--phone span {
   color: var(--gray);
   font-size: var(--size-xs);
+}
+
+/* Убираем отстумы между номером и 24/7 и уменьшаем шрифт номера телефона */
+@media (max-width: 1280px) {
+  .header__contact--phone {
+    gap: 0px;
+  }
+
+  .header__contact--phone a {
+    font-size: var(--size-md);
+  }
 }
