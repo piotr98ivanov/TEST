@@ -134,7 +134,9 @@ body {
 }
 
 .header__logo--wrapper {
-
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .header__logo {
@@ -143,6 +145,21 @@ body {
 
 .header__logo__source {
 
+}
+
+/* По умолчанию кнопка бургера скрыта, и показывается только на планшетах и ниже */
+.header__burger__button {
+  /* некоторые элементы в HTML имеют свои стили по умолчанию */
+  /* так вот чтобы не передивать их стили, можно все сразу сбросить с помощью all: unset; */
+  all: unset;
+
+  display: none;
+}
+
+@media (max-width: 1280px) {
+  .header__burger__button {
+    display: block;
+  }
 }
 
 .header__nav {
