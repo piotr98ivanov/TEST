@@ -339,3 +339,57 @@ body {
     font-size: 10px;
   }
 }
+
+/* Mobile Menu */
+.mobile__menu {
+  position: fixed;
+  z-index: 101;
+  top: 0;
+  bottom: 0;
+  /* изначально мы прячем мобильное меню из видимой области экрана с помощью минусового значения */
+  /* и только при наличии дополнительного класса .active мы покажем это меню, то есть вернем значение left в 0; */
+  /* минус 280px потому что шарани менюшки 280px */
+  left: -280px;
+
+  width: 280px;
+  background: #fff;
+  transition: all 0.5s ease;
+}
+
+/* тут получается, эти стили применятся только при условии если один элемент будет иметь оба эти класса */
+/* оба имеется ввиду и .mobile__menu и .active. К примеру <div class="mobile__menu active">...</div> */
+.mobile__menu.active {
+  /* С помощью left: 0; мы возвращаем меню в видимую область экрана */
+  left: 0;
+}
+
+/* Этот класс отвечает за заблюренный фон. */
+.mobile__menu__background {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 99;
+
+  opacity: 0;
+  visibility: hidden;
+
+  backdrop-filter: saturate(180%) blur(10px);
+  background-color: rgba(50, 48, 48, 0.55);
+  transition: all 0.5s ease;
+}
+
+/* https://www.w3schools.com/cssref/sel_element_pluss.php#:~:text=that%20are%20placed-,immediately%20after,-%3Cdiv%3E%20elements%3A */
+.mobile__menu.active + .mobile__menu__background {
+  opacity: 1;
+  visibility: visible;
+  z-index: 99;
+}
+
+.mobile__menu__close__button {
+  all: unset;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
