@@ -350,7 +350,7 @@ body {
   /* и только при наличии дополнительного класса .active мы покажем это меню, то есть вернем значение left в 0; */
   /* минус 280px потому что шарани менюшки 280px */
   left: -280px;
-
+  overflow-y: scroll;
   width: 280px;
   background: #fff;
   transition: all 0.5s ease;
