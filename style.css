@@ -446,7 +446,8 @@ padding: 0 16px;
 
 .mobile__menu__socialc__email{
   display: flex;
-  grid-gap: 5px;
+  gap: 5px;
+
   position: relative;
   margin-top: 8px;
   font-style: normal;
