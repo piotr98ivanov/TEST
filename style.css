@@ -1,0 +1,165 @@
+/* В CSS мы может создавать переменные вот таким образом и использовать их с помощью var(--имя-переменной); */
+/* Это поможет нам не путаться в значениях */
+:root {
+	/* Тут определяем цвета сайта */
+	--black: #231f20;
+	--black2: #25252e;
+	--white: #fff;
+	--silver: #f1f1f5;
+	--gray: #777595;
+	--yellow: #ffda00;
+	--orange: #ff6c0e;
+ 
+	/* Тут определяем все для типографии, зазмеры шрифтов и тп */
+	--size-h1-extra: 82px;
+	--size-h1: 60px;
+	--size-h2: 42px;
+	--size-h3: 36px;
+	--size-h4: 28px;
+	--size-xs: 12px;
+	--size-sm: 14px;
+	--size-md: 16px;
+	--size-lg: 18px;
+	--size-xl: 20px;
+ 
+	--weight-300: 300;
+	--weight-400: 400;
+	--weight-500: 500;
+	--weight-600: 600;
+ 
+	/* Тут определяем брейк поинты */
+	--container: 1280px;
+ }
+ 
+ *, *:before, *:after {
+	box-sizing: border-box;
+ }
+ 
+ html, body {
+	height: 100%;
+ }
+ 
+ body {
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+ }
+ 
+ img, picture, video, canvas, svg {
+	display: block;
+	max-width: 100%;
+ }
+ 
+ input, button, textarea, select {
+	font: inherit;
+ }
+ 
+ p, h1, h2, h3, h4, h5, h6 {
+	overflow-wrap: break-word;
+ }
+ 
+ blockquote,
+ dl,
+ dd,
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6,
+ hr,
+ figure,
+ ol,
+ p,
+ pre,
+ ul {
+	margin: 0;
+	padding: 0;
+ }
+ 
+ html,
+ body {
+	font-family: 'Rubik', sans-serif;
+	padding: 0;
+	margin: 0;
+ }
+ 
+.footer__container{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1280px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 56px;
+  margin: 0 auto;
+  background-color: #54595F;
+}
+
+@media (max-width: 1280px) {
+	.container {
+	  padding-left: 16px;
+	  padding-right: 16px;
+	}
+ }
+
+ .footer {
+	/* релатив тут чтобы телефон на мобилке не улетал.
+	если родителю дать релатив, то чилдрен в позиции абсолют позицианируется относительно родителя.
+	*/
+	position: relative;
+	box-shadow: 0px 8px 28px rgb(56 55 69 / 10%);
+ }
+
+ .footer__container {
+	align-items: center;
+ }
+ @media (max-width: 1280px) {
+	.footer {
+	  padding-top: 26px;
+	  padding-bottom: 26px;
+	}
+ }
+ 
+@media (max-width: 420px) {
+	.footer {
+	  padding-top: 16px;
+	  padding-bottom: 16px;
+	}
+ }
+ 
+ .footer__logo--wrapper {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+ }
+ @media (max-width: 1280px) {
+	.footer__content__menu {
+	  display: none;
+	}
+ }
+/* На планшете по Y уменьшается размер логотипа */
+@media (max-width: 860px) {
+	.footer__logo {
+	  width: 110px;
+	}
+ }
+ 
+ .footer__content__menu{
+	display: flex;
+	align-items: center;
+	gap: 20px;
+ 
+}
+.footer__content__contact__item {
+	font-size: var(--size-md);
+	color: var(--black);
+	font-weight: var(--weight-500);
+ 
+	text-decoration: none;
+ 
+	padding: 12px 0;
+ }
+ 
+ .footer__content__contact__item:visited {
+	color: var(--black);
+ }
