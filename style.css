@@ -1,165 +1,320 @@
-/* В CSS мы может создавать переменные вот таким образом и использовать их с помощью var(--имя-переменной); */
-/* Это поможет нам не путаться в значениях */
 :root {
-	/* Тут определяем цвета сайта */
-	--black: #231f20;
-	--black2: #25252e;
-	--white: #fff;
-	--silver: #f1f1f5;
-	--gray: #777595;
-	--yellow: #ffda00;
-	--orange: #ff6c0e;
- 
-	/* Тут определяем все для типографии, зазмеры шрифтов и тп */
-	--size-h1-extra: 82px;
-	--size-h1: 60px;
-	--size-h2: 42px;
-	--size-h3: 36px;
-	--size-h4: 28px;
-	--size-xs: 12px;
-	--size-sm: 14px;
-	--size-md: 16px;
-	--size-lg: 18px;
-	--size-xl: 20px;
- 
-	--weight-300: 300;
-	--weight-400: 400;
-	--weight-500: 500;
-	--weight-600: 600;
- 
-	/* Тут определяем брейк поинты */
-	--container: 1280px;
- }
- 
- *, *:before, *:after {
-	box-sizing: border-box;
- }
- 
- html, body {
-	height: 100%;
- }
- 
- body {
-	line-height: 1.5;
-	-webkit-font-smoothing: antialiased;
- }
- 
- img, picture, video, canvas, svg {
-	display: block;
-	max-width: 100%;
- }
- 
- input, button, textarea, select {
-	font: inherit;
- }
- 
- p, h1, h2, h3, h4, h5, h6 {
-	overflow-wrap: break-word;
- }
- 
- blockquote,
- dl,
- dd,
- h1,
- h2,
- h3,
- h4,
- h5,
- h6,
- hr,
- figure,
- ol,
- p,
- pre,
- ul {
-	margin: 0;
-	padding: 0;
- }
- 
- html,
- body {
-	font-family: 'Rubik', sans-serif;
-	padding: 0;
-	margin: 0;
- }
- 
-.footer__container{
+  /* Тут определяем цвета сайта */
+  --black: #231f20;
+  --black2: #25252e;
+  --white: #fff;
+  --silver: #f1f1f5;
+  --gray: #777595;
+  --yellow: #ffda00;
+  --orange: #ff6c0e;
+
+  /* Тут определяем все для типографии, зазмеры шрифтов и тп */
+  --size-h1-extra: 82px;
+  --size-h1: 60px;
+  --size-h2: 42px;
+  --size-h3: 36px;
+  --size-h4: 28px;
+  --size-xs: 12px;
+  --size-sm: 14px;
+  --size-md: 16px;
+  --size-lg: 18px;
+  --size-xl: 20px;
+
+  --weight-300: 300;
+  --weight-400: 400;
+  --weight-500: 500;
+  --weight-600: 600;
+
+  /* Тут определяем брейк поинты */
+  --container: 1280px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+ol,
+p,
+pre,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  font-family: "Rubik", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.footer  {
+  background-color: #25252e;
+  color:var(--white);
+}
+
+.footer   a {
+  text-decoration: none;
+  color: var(--white);
+  transition: 0.2s ease;
+}
+.footer   a:hover {
+  text-decoration: none;
+  color: var(--gray);
+}
+.footer__col__contacts--phone span{
+  color: gray;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+
+.footer__inner {
+  display: inline;
+  padding-top: 56px;
+}
+
+.container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   width: 100%;
   max-width: 1280px;
-  padding-left: 40px;
-  padding-right: 40px;
-  padding-top: 56px;
-  margin: 0 auto;
-  background-color: #54595F;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 16px;
 }
 
-@media (max-width: 1280px) {
-	.container {
-	  padding-left: 16px;
-	  padding-right: 16px;
-	}
- }
+.footer__logo--wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 262px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
- .footer {
-	/* релатив тут чтобы телефон на мобилке не улетал.
-	если родителю дать релатив, то чилдрен в позиции абсолют позицианируется относительно родителя.
-	*/
-	position: relative;
-	box-shadow: 0px 8px 28px rgb(56 55 69 / 10%);
- }
-
- .footer__container {
-	align-items: center;
- }
- @media (max-width: 1280px) {
-	.footer {
-	  padding-top: 26px;
-	  padding-bottom: 26px;
-	}
- }
- 
-@media (max-width: 420px) {
-	.footer {
-	  padding-top: 16px;
-	  padding-bottom: 16px;
-	}
- }
- 
- .footer__logo--wrapper {
+.footer__logo img {
+  height: 110px;
+}
+.footer__container {
 	display: flex;
+  justify-content: space-between;
+   flex-wrap: wrap; 
+  padding-top: 30px;
+  align-items: flex-start;
+  row-gap: 14px;
+  /* border-top: 1px solid rgba(119, 117, 149, 0.5); */ */
+}
+
+.footer__contacts {
+  display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.footer__col {
+  
+}
+
+.footer__col__contacts {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0;
+  justify-content: center;
+  align-items: center;
+}
+.footer__col__contacts--icon a {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.footer__col__contacts--icon a img {
+  width: 38px;
+  height: 38px;
+  margin-bottom: 0px;
+  margin-right: 8px;
+}
+
+.footer__col__contacts--icon span {
+  display: block;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+}
+.footer__col__menu {
+  width: calc(100% / 3 * 2);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.footer__socials,.footer__contacts{
+	width: 25%;
+}
+.footer__socials{
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+
+}
+.footer__socials__item{
+ display: flex;
+ gap: 12px;
+}
+
+.footer__links{
+width: 50%;
+display: flex;
+justify-content: center;
+
+}
+@media(max-width:760px){
+  .footer__links{
+    justify-content: flex-start;
+  }
+  
+}
+@media (max-width:1024px){
+	.footer__contacts{
+		width: 100%;
+	}
+	.footer__socials{
+    width: 50%;
+
+	}
+
+}
+@media screen and (max-width: 760px){
+	.footer__col{
+		width: 100% !important;
+	}
+}
+
+.footer__col__contactwhattsap{
+	display: flex;
+	gap: 32px;
+}
+.footer__col__contactwhattsap a{
+	display: flex;
+	flex-direction: column;
+	gap: 7px;
 	align-items: center;
+}
+
+.footer__col__contactwhattsap a img{
+	width: 34px;
+}
+.footer__col__contacts--phone{
+	display: flex;
 	gap: 12px;
- }
- @media (max-width: 1280px) {
-	.footer__content__menu {
-	  display: none;
-	}
- }
-/* На планшете по Y уменьшается размер логотипа */
-@media (max-width: 860px) {
-	.footer__logo {
-	  width: 110px;
-	}
- }
- 
- .footer__content__menu{
-	display: flex;
-	align-items: center;
-	gap: 20px;
- 
+	flex-direction: column;
+	margin-top: 32px;
 }
-.footer__content__contact__item {
-	font-size: var(--size-md);
-	color: var(--black);
-	font-weight: var(--weight-500);
- 
-	text-decoration: none;
- 
-	padding: 12px 0;
- }
- 
- .footer__content__contact__item:visited {
-	color: var(--black);
- }
+.footer__col__menu__item{
+	display: flex;
+	flex-direction: column;
+
+}
+
+.footer__links ul{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 32px;
+  max-width: 500px;
+}
+.footer__links li{
+	margin-bottom: 28px;
+	list-style: none;
+}
+
+.footer__col__contacts{
+  display: flex;
+  gap: 33px;
+
+}
+.footer__col__contacts a{
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  gap: 8px;
+  width: 32px;
+}
+.footer__col__contacts a:hover svg{
+  fill: #fff;
+}
+.footer__col__contacts a img{
+  width: 34px;
+}
+.footer__col__contacts--phone a{
+  font-size: 22px;
+  font-weight: 500;
+}
+.social__item svg {
+  fill: #777595;
+  transition: all 0.3s ease;
+
+}
+.footer__copyright{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0;
+  border-top: 1px solid rgba(119, 117, 149, 0.5);
+  color: var(--gray);
+  font-size: 15px;
+  font-weight: 300;
+
+}
