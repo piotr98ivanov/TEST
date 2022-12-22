@@ -230,6 +230,7 @@ justify-content: center;
 @media (max-width:1024px){
 	.footer__contacts{
 		width: 100%;
+		align-items: center;
 	}
 	.footer__socials{
     width: 50%;
