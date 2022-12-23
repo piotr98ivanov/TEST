@@ -121,12 +121,12 @@ div .header__title{
 }
 }
 @media(max-width: 760px){
-	.header__slide img {
+	.header__slider  {
 		display: flex;
 		align-items: center;
 		position: absolute;
 		margin-top: 150px;
-		height: 270px;
+		height:auto ;
 		
   }
   
