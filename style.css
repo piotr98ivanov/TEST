@@ -97,6 +97,371 @@ body {
   margin: 0;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 16px;
+}
+
+/**
+  Header Styles
+ */
+.header {
+  /* релатив тут чтобы телефон на мобилке не улетал.
+  если родителю дать релатив, то чилдрен в позиции абсолют позицианируется относительно родителя.
+  */
+  position: relative;
+  box-shadow: 0px 8px 28px rgb(56 55 69 / 10%);
+}
+
+.header__container {
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* На разрешении 1280px и меньше добавляем внутренние отступы для хедера так как логотип уменьшается
+ и контент прилепает к верху и низу хедера. В оригинале там 26px сверху и сниху
+ */
+@media (max-width: 1280px) {
+  .header {
+    padding-top: 26px;
+    padding-bottom: 26px;
+  }
+}
+
+@media (max-width: 420px) {
+  .header {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+}
+
+.header__logo--wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header__logo {
+
+}
+
+/* На планшете по Y уменьшается размер логотипа */
+@media (max-width: 860px) {
+  .header__logo {
+    width: 110px;
+  }
+}
+
+.header__logo__source {
+
+}
+
+/* По умолчанию кнопка бургера скрыта, и показывается только на планшетах и ниже */
+.header__burger__button {
+  /* некоторые элементы в HTML имеют свои стили по умолчанию */
+  /* так вот чтобы не передивать их стили, можно все сразу сбросить с помощью all: unset; */
+  all: unset;
+
+  display: none;
+}
+
+@media (max-width: 1280px) {
+  .header__burger__button {
+    display: block;
+  }
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* На разрешении 1280px навигация прячется */
+@media (max-width: 1280px) {
+  .header__nav {
+    display: none;
+  }
+}
+
+.header__nav__item {
+  font-size: var(--size-md);
+  color: var(--black);
+  font-weight: var(--weight-500);
+
+  text-decoration: none;
+
+  padding: 12px 0;
+}
+
+.header__nav__item:visited {
+  color: var(--black);
+}
+
+.header__nav__item:hover {
+  color: var(--orange);
+}
+
+.header__nav__item.active {
+  border-bottom: 2px solid var(--yellow);
+}
+
+.header__contact {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 24px;
+}
+
+@media (max-width: 860px) {
+  .header__contact {
+    gap: 14px;
+  }
+}
+
+.header__contact__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  color: var(--black);
+  font-weight: var(--weight-500);
+  text-decoration: none;
+
+  gap: 2px;
+}
+
+/* На планшетах контакты идут в строку, а так же увеличивается расстояние между иконкой и текстом */
+@media (max-width: 1280px) {
+  /* Восетую глянуть в доку по CSS .not() Если в кратце то это в not мы можем указать исключения */
+  /* Исключение могут быть так же и псевдо классы типа :hover, :active и тп */
+  .header__contact__item:not(.header__contact--phone) {
+    flex-direction: row;
+    gap: 6px;
+  }
+}
+
+@media (max-width: 420px) {
+  .header__contact__item:not(.header__contact--phone) {
+    flex-direction: column;
+    gap: 6px;
+  }
+}
+
+.header__contact__item:visited {
+  color: var(--black);
+}
+
+.header__contact__item:hover {
+  color: var(--orange);
+}
+
+.header__contact__item span {
+  font-size: var(--size-xs);
+}
+
+.header__contact__item img {
+  width: 56px;
+}
+
+@media (max-width: 1280px) {
+  .header__contact__item img {
+    width: 36px;
+  }
+}
+
+@media (max-width: 860px) {
+  .header__contact__item img {
+    width: 30px;
+  }
+}
+
+/* Styles specific for the Phone block */
+.header__contact--phone {
+  /* gap чтобы раздвинуть немного номер от текста */
+  gap: 8px;
+
+  /* чтобы выровнять по левой стороне в отличае от соц.сетей */
+  align-items: flex-start;
+}
+
+.header__contact--phone a {
+  color: var(--black);
+  font-size: var(--size-xl);
+  font-weight: var(--weight-600);
+
+  text-decoration: none;
+}
+
+.header__contact--phone a:visited {
+  color: var(--black);
+}
+
+.header__contact--phone span {
+  color: var(--gray);
+  font-size: var(--size-xs);
+}
+
+/* Убираем отстумы между номером и 24/7 и уменьшаем шрифт номера телефона */
+@media (max-width: 1280px) {
+  .header__contact--phone {
+    gap: 0px;
+  }
+
+  .header__contact--phone a {
+    font-size: var(--size-md);
+  }
+}
+
+@media (max-width: 860px) {
+  .header__contact--phone span {
+    display: none;
+  }
+}
+
+@media (max-width: 620px) {
+  .header__contact--phone {
+    display: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .header__contact__item span {
+    font-size: 10px;
+  }
+}
+
+/* Mobile Menu */
+.mobile__menu {
+  position: fixed;
+  z-index: 101;
+  top: 0;
+  bottom: 0;
+  /* изначально мы прячем мобильное меню из видимой области экрана с помощью минусового значения */
+  /* и только при наличии дополнительного класса .active мы покажем это меню, то есть вернем значение left в 0; */
+  /* минус 280px потому что шарани менюшки 280px */
+  left: -280px;
+  overflow-y: scroll;
+  width: 280px;
+  background: #fff;
+  transition: all 0.5s ease;
+}
+
+/* тут получается, эти стили применятся только при условии если один элемент будет иметь оба эти класса */
+/* оба имеется ввиду и .mobile__menu и .active. К примеру <div class="mobile__menu active">...</div> */
+.mobile__menu.active {
+  /* С помощью left: 0; мы возвращаем меню в видимую область экрана */
+  left: 0;
+}
+
+/* Этот класс отвечает за заблюренный фон. */
+.mobile__menu__background {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 99;
+
+  opacity: 0;
+  visibility: hidden;
+
+  backdrop-filter: saturate(180%) blur(10px);
+  background-color: rgba(50, 48, 48, 0.55);
+  transition: all 0.5s ease;
+}
+
+/* https://www.w3schools.com/cssref/sel_element_pluss.php#:~:text=that%20are%20placed-,immediately%20after,-%3Cdiv%3E%20elements%3A */
+.mobile__menu.active + .mobile__menu__background {
+  opacity: 1;
+  visibility: visible;
+  z-index: 99;
+}
+
+.mobile__menu__close__button {
+  all: unset;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+.mobile__menu__list{
+  margin-top: 50px;
+  margin-left: 16px;
+}
+.mobile__menu__list__item{
+  list-style: none;
+  font-size: inherit;
+  color: inherit
+}
+.mobile__menu__list__item a{
+  text-decoration: none;
+  color: #231f20;
+}
+.mobile__menu__contact{
+  padding: 0 16px;
+}
+.mobile__menu__contact__span{
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 100%;
+  color: var(--gray);
+}
+.mobile__menu__contact__item a{
+  text-decoration: none;
+  color: #231f20;
+  font-weight: 500;
+}
+.mobile__menu__contact__icon{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  text-decoration: none;
+  color: var(--black);
+  font-weight: var(--weight-500);
+  text-decoration: none;
+  gap: 3px;
+}
+.mobile__menu__socialc__adress{
+  display: flex;
+  grid-gap: 5px;
+  position: relative;
+  margin-top: 8px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  color: var(--black);
+}
+
+.mobile__menu__socialc__email{
+  display: flex;
+  gap: 5px;
+
+  position: relative;
+  margin-top: 8px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  color: var(--black);
+  text-decoration: none;
+}
+.mobile__menu__socialc__email a{
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  color: var(--black);
+  text-decoration: none;
+}
+
 .footer  {
   background-color: #25252e;
   color:var(--white);
@@ -124,16 +489,6 @@ body {
   padding-top: 56px;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: 1280px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 16px;
-}
-
 .footer__logo--wrapper {
   display: flex;
   flex-direction: column;
@@ -153,24 +508,12 @@ body {
   padding-top: 30px;
   align-items: flex-start;
   row-gap: 14px;
-  /* border-top: 1px solid rgba(119, 117, 149, 0.5); */ */
 }
 
 .footer__contacts {
   display: flex;
 	justify-content: center;
 	flex-direction: column;
-}
-
-/**
-  Header Styles
- */
-.header {
-  /* релатив тут чтобы телефон на мобилке не улетал.
-  если родителю дать релатив, то чилдрен в позиции абсолют позицианируется относительно родителя.
-  */
-  position: relative;
-  box-shadow: 0px 8px 28px rgb(56 55 69 / 10%);
 }
 
 .footer__col__contacts {
@@ -327,131 +670,6 @@ justify-content: center;
 
 }
 
-/* Mobile Menu */
-.mobile__menu {
-  position: fixed;
-  z-index: 101;
-  top: 0;
-  bottom: 0;
-  /* изначально мы прячем мобильное меню из видимой области экрана с помощью минусового значения */
-  /* и только при наличии дополнительного класса .active мы покажем это меню, то есть вернем значение left в 0; */
-  /* минус 280px потому что шарани менюшки 280px */
-  left: -280px;
-  overflow-y: scroll;
-  width: 280px;
-  background: #fff;
-  transition: all 0.5s ease;
-}
-
-/* тут получается, эти стили применятся только при условии если один элемент будет иметь оба эти класса */
-/* оба имеется ввиду и .mobile__menu и .active. К примеру <div class="mobile__menu active">...</div> */
-.mobile__menu.active {
-  /* С помощью left: 0; мы возвращаем меню в видимую область экрана */
-  left: 0;
-}
-
-/* Этот класс отвечает за заблюренный фон. */
-.mobile__menu__background {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  z-index: 99;
-
-  opacity: 0;
-  visibility: hidden;
-
-  backdrop-filter: saturate(180%) blur(10px);
-  background-color: rgba(50, 48, 48, 0.55);
-  transition: all 0.5s ease;
-}
-
-/* https://www.w3schools.com/cssref/sel_element_pluss.php#:~:text=that%20are%20placed-,immediately%20after,-%3Cdiv%3E%20elements%3A */
-.mobile__menu.active + .mobile__menu__background {
-  opacity: 1;
-  visibility: visible;
-  z-index: 99;
-}
-
-.mobile__menu__close__button {
-  all: unset;
-  position: absolute;
-  top: 12px;
-  right: 12px;
-}
-.mobile__menu__list{
- margin-top: 50px;
- margin-left: 16px;
-}
-.mobile__menu__list__item{
-  list-style: none;
-  font-size: inherit;
-  color: inherit
-}
-.mobile__menu__list__item a{
-  text-decoration: none;
-  color: #231f20;
-}
-.mobile__menu__contact{
-padding: 0 16px;
-}
-.mobile__menu__contact__span{
-  font-style: normal;
-  font-weight: 300;
-  font-size: 12px;
-  line-height: 100%;
-  color: var(--c-gray);
-}
-.mobile__menu__contact__item a{
-  text-decoration: none;
-  color: #231f20;
-  font-weight: 500;
-}
-.mobile__menu__contact__icon{
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  text-decoration: none;
-  color: var(--black);
-  font-weight: var(--weight-500);
-  text-decoration: none;
-  gap: 3px;
-}
-.mobile__menu__socialc__adress{
-  display: flex;
-  grid-gap: 5px;
-  position: relative;
-  margin-top: 8px;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 14px;
-  line-height: 17px;
-  color: var(--c-dark);
-}
-
-.mobile__menu__socialc__email{
-  display: flex;
-  gap: 5px;
-
-  position: relative;
-  margin-top: 8px;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 14px;
-  line-height: 17px;
-  color: var(--c-dark);
- text-decoration: none;
-}
-.mobile__menu__socialc__email a{
-  font-style: normal;
-  font-weight: 300;
-  font-size: 14px;
-  line-height: 17px;
-  color: var(--c-dark);
- text-decoration: none;
-}
-
 .content__container{
   display: flex;
   width: 100%;
@@ -557,7 +775,7 @@ padding: 0 16px;
   font-weight: 700;
   font-size: 60px;
   line-height: 60px;
-  color: var(--c-dark);
+  color: var(--black);
 }
 .header__title span{
   display: flex;
@@ -580,7 +798,7 @@ padding: 0 16px;
   font-weight: 300;
   font-size: 15px;
   line-height: 140%;
-  color: var(--c-gray);
+  color: var(--gray);
 }
 .header__button a{
   display: flex;
