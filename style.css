@@ -845,7 +845,7 @@ justify-content: center;
   padding:0 16px 0 16px;
 
 }
-.content_arguments{
+.content_arguments {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -934,5 +934,351 @@ justify-content: center;
 @media(max-width:320px){
   .content_arguments{
     gap: 40px;
+  }
+}
+
+.content__services{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.content__h3{
+  display: flex;
+  gap: 8px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 54px;
+  text-transform: uppercase;
+  color: var(--dark);
+
+}
+.content__h3 span{
+  color: var(--yellow);
+}
+.content__h3__text{
+  display: flex;
+  margin-bottom: 40px;
+  width: 58%;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 140%;
+  color: #777595;
+  opacity: 0.8;
+}
+
+@media(max-width: 1280px){
+  .content__h3{
+    font-size: 32px;
+    line-height: 36px;
+    margin-bottom: 28px;
+  }
+  .content__h3__text{
+    width: calc(calc(100% - 32px)/3*2);
+    font-size: 16px;
+    line-height: 140%;
+  }
+}
+
+@media(max-width: 1020px){
+  .content__services{
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .content__h3{
+    font-size: 28px;
+    line-height: 36px;
+  }
+  .content__h3__text{
+    max-width: 60ch;
+    margin-bottom: 0;
+    text-align: center;
+    width: auto !important;
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+}
+
+@media(max-width: 680px){
+  .content__h3{
+    font-size: 22px;
+    line-height: 140%;
+  }
+}
+
+.content__list{
+  display: flex;
+  flex-wrap: wrap;
+
+
+}
+.content__list__item{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: calc(calc(100% - 0px)/3);
+  margin:0 0 20px;
+}
+
+@media(max-width: 1280px){
+  div.content__list__item__content{
+    margin-right: 0px;
+  }
+  .content__list{
+    margin: 0 -8px;
+  }
+  .content__list__item{
+
+    width: calc(calc(100% - 0px)/3);
+    padding: 8px;
+    margin-bottom: 28px;
+  }
+  .image,.image__img__item{
+    height: 150px;
+    margin-bottom: 22px;
+  }
+  span.item__content__title{
+    font-size: 18px;
+    line-height: 24px;
+  }
+  span.item__content__summary{
+    font-size: 12px;
+  }
+  span.item__content__price{
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+}
+
+@media(max-width: 1020px){
+  .content__list{
+    margin-bottom: 88px;
+  }
+
+}
+
+@media(max-width: 960px){
+  span.item__content__title{
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 6px;
+  }
+}
+@media(max-width: 860px){
+
+  .content__list__item{
+    width: calc(calc(100% - 100px)/2);
+    max-width: 320px;
+    width: calc(50% - 16px);
+    margin: 0;
+  }
+
+  .content__list{
+    justify-content: center;
+  }
+  .content__list__item__content{
+    padding: 60px 22px 18px;
+  }
+}
+@media(max-width: 480px){
+  .content__list{
+    margin: 0 -16px 68px;;
+  }
+  .content__list__item{
+    min-width: 100%;
+    max-width: 100%;
+    width: calc(50% - 16px);
+    margin: 0;
+  }
+
+}
+
+.services-item__title {
+  font-size: 14px;
+  line-height: 18px;
+  margin-bottom: 6px;
+}
+
+.image__img__item{
+  position: absolute;
+  margin-bottom: -52px;
+}
+.hservices__list {
+  display: flex;
+  justify-content: center;
+  margin: 0 -16px 88px;
+
+}
+.item__content__title{
+  margin-bottom: 8px;
+  display: block;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+}
+.item__content__title:hover{
+  color: var(--gray);
+}
+.item__content__summary{
+  margin-bottom: 10px;
+  display: block;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 140%;
+  color: var(--gray);
+}
+.item__content__price{
+  display: flex;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 36px;
+  color: var(--orange);
+}
+.image{
+  height: 192px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.content__list__item__content{
+  transition: all 0.3s ease;
+  background: var(--silver);
+  border-radius: 10px;
+  padding: 60px 24px 24px;
+  margin-right: 40px;
+}
+.content__list__item__content:hover{
+  background: #fff;
+}
+
+.content__description{
+  color: #808080;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 160%;
+  margin-bottom: 20px;
+  padding: 0 100px
+
+}
+.content__description p{
+  margin-bottom: 20px;
+}
+.content__description ul{
+  padding: 0;
+  padding-left: 28px;
+}
+.content__description ul li{
+  margin-bottom: 20px;
+}
+
+@media(max-width: 1280px){
+  .content{
+    padding: 0 16px;
+  }
+}
+@media(max-width: 1020px){
+  .content__description{
+    padding: 0;
+  }
+}
+
+@media(max-width: 960px){
+  .content__description p {
+    font-size: 16px;
+  }
+  .content__description ul li{
+    font-size: 16px;
+  }
+}
+
+@media(max-width: 480px){
+  .content__description p {
+    font-size: 14px;
+  }
+  .content__description ul li{
+    font-size: 14px;
+  }
+}
+
+.content__propose {
+  margin-top: 20px;
+  background: var(--orange);
+  padding-top: 68px;
+}
+
+.content__h3center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 54px;
+  text-transform: uppercase;
+  color: #fff;
+}
+.content__h3center__text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1280px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 140%;
+  color: #fff;
+  opacity: 0.8;
+  text-align: center;
+  margin: 0 auto 40px;
+
+}
+
+
+@media(max-width: 1280px){
+  .content__h3center {
+    font-size: 32px;
+    line-height: 36px;
+    margin-bottom: 28px;
+  }
+
+  .content__h3center__text{
+    width: calc(calc(100% - 32px)/3*2);
+    font-size: 16px;
+    line-height: 140%;
+  }
+  .content{
+
+  }
+}
+
+@media(max-width: 1020px){
+  .content__h3center{
+    font-size: 28px;
+    line-height: 36px;
+  }
+  .content__h3center__text{
+    width: auto !important;
+    font-size: 14px;
+    line-height: 140%;
+  }
+}
+
+@media(max-width: 680px){
+  .content__h3center{
+    font-size: 22px;
+    line-height: 140%;
+    text-align: center;
   }
 }
